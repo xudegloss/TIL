@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+.background {
+  width: 1024px;
+  height: 600px;
+  background-image: url("./../images/background.png");
+  padding: 20px 0px 0px 20px; /* 시계 방향 */
+}
+
+.outer-box {
+  width: 808px;
+  height: 544px;
+  background-image: url("./../images/outer-box.png");
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  padding: 32px 0px 0px 32px;
+}
+
+.wrapper-left {
+  display: flex;
+  flex-direction: column;
+  width: 208px;
+  height: 472px;
+}
+
+.wrapper-left-header {
+  width: 100%; /* 부모 박스 기준 */
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.today {
+  width: 131px;
+  height: 15px;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 9px;
+  color: #55b2d4;
+}
+
+.wrapper-left-body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 30px;
+  border: 1px solid gray;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.left-body-header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.left-body-header-gray {
+  width: 148px;
+  height: 133px;
+  background-color: #c4c4c4;
+}
+
+.left-body-header-line {
+  border-top: 1px dotted black;
+  margin: 12px 0px; /* 상하 여백, 좌우 여백 */
+}
+
+.left-body-profile {
+  width: 100%;
+  height: 72px;
+  font-family: "Malgun Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 9px;
+  line-height: 12px;
+  color: #999999;
+}
+
+.left-body-profile div {
+  padding: 6px;
+}
+
+.left-body-profile div img {
+  margin-right: 9px;
+}
+
+.left-body-footer {
+  font-family: "Malgun Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 15px;
+  width: 141px;
+  height: 41px;
+  margin: 90% 37px 31px 30px;
+}
+
+.left-body-footer select {
+  margin: 8px 0px 0px 0px;
+}
+
+.wrapper-right {
+  width: 524px;
+  height: 472px;
+  padding: 15px 26px 0px 36px;
+}
+
+.wrapper-right-header {
+  width: 100%;
+  height: 21px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.wrapper-right-title {
+  width: 192px;
+  height: 21px;
+  font-family: "Malgun Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  color: #55b2d4;
+}
+
+.wrapper-right-private {
+  width: 120px;
+  height: 18px;
+  font-family: "PFStardust";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  color: #55b2d4;
+}
