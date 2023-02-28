@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+#background {
+  width: 1024px;
+  height: 600px;
+  padding: 20px;
+  background-image: url("./../cyworld/images/background.png");
+}
+
+#outerbox {
+  width: 808px;
+  height: 544px;
+  background-image: url("./../cyworld/images/outer-box.png");
+  padding: 24px 26px 24px 26px;
+}
+
+#innerbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 6px;
+}
+
+#innerbox-left {
+  display: flex;
+  flex-direction: column;
+  width: 215px;
+  height: 472px;
+}
+
+#innerbox-left-header {
+  text-align: center;
+  font-family: "Sci Fied Bitmap";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 9px;
+  line-height: 9px;
+  color: #55b2d4;
+}
+
+#innerbox-left-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: white;
+  border: 1px solid gray;
+  border-radius: 10px;
+  margin: 6px;
+  padding: 20px 30px;
+}
+
+#left-body-header {
+  width: 148px;
+  height: 133px;
+  background-image: url("./../cyworld/images/profile.jpg");
+  background-size: 148px 133px;
+}
+
+#left-body-profile {
+  display: flex;
+  flex-direction: column;
+  width: 148px;
+  height: 200px;
+  border-top: 1px dotted gray;
+}
+
+#left-body-profile span {
+  padding: 5px;
+  font-family: "Malgun Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 9px;
+  line-height: 12px;
+  color: #999999;
+}
+
+#left-body-profile i {
+  color: black;
+}
+
+/* first-child 이용하여 첫 번째 인자만 css 처리하기 */
+#left-body-profile span:first-child {
+  margin-top: 5px;
+}
+
+#left-body-footer {
+  display: flex;
+  flex-direction: column;
+  width: 148px;
+  height: 50px;
+  font-family: "Malgun Gothic";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 15px;
+  color: #000000;
+}
+
+#left-body-footer select {
+  margin-top: 9px;
+}
+
+#innerbox-right {
+  height: 472px;
+  width: 593px;
+}
+
+#innerbox-right-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0px 26px;
+}
+
+#right-header-title {
+  font-family: "Malgun Gothic";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  color: #55b2d4;
+}
+
+#right-header-private {
+  font-family: "PFStardust";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  color: #55b2d4;
+}
