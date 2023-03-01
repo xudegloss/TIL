@@ -43,18 +43,26 @@ body {
   color: #0068ff;
 }
 
+.user-info {
+  margin-top: 39px;
+}
+
 .user-info div {
+  margin-top: 21px;
+}
+
+.user-info input {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   color: #797979;
+  border: none;
   border-bottom: 1px solid #cfcfcf;
   width: 466px;
-  height: 80px;
   margin-top: 21px;
 }
 
-.user-info #email {
+.user-info-email input {
   border-bottom: 1px solid #0068ff;
 }
 

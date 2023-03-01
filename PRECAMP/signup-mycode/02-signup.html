@@ -2,7 +2,7 @@
 <html lang="ko">
   <head>
     <title>회원가입</title>
-    <link rel="stylesheet" href="02-signup.css" />
+    <link rel="stylesheet" href="./02-signup.css" />
   </head>
   <body>
     <div class="container">
@@ -12,10 +12,22 @@
           <div>정보를 입력해주세요</div>
         </div>
         <div class="user-info">
-          <div id="email">* 이메일</div>
-          <div>* 이름</div>
-          <div>* 비밀번호</div>
-          <div>* 비밀번호 확인</div>
+          <div class="user-info-email">
+            <div>* 이메일</div>
+            <input type="email" />
+          </div>
+          <div class="user-info-name">
+            <div>* 이름</div>
+            <input type="text" />
+          </div>
+          <div class="user-info-pw">
+            <div>* 비밀번호</div>
+            <input type="password" />
+          </div>
+          <div class="user-info-pw-check">
+            <div>* 비밀번호 확인</div>
+            <input type="password" />
+          </div>
         </div>
         <div class="gender">
           <input type="radio" name="gender" />
