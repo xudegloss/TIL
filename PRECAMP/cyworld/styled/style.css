@@ -80,7 +80,7 @@
 
 .left-body-profile {
   width: 100%;
-  height: 72px;
+  height: 100%;
   font-family: "Malgun Gothic";
   font-style: normal;
   font-weight: 700;
@@ -103,19 +103,29 @@
   font-weight: 400;
   font-size: 11px;
   line-height: 15px;
-  width: 141px;
-  height: 41px;
-  margin: 90% 37px 31px 30px;
+  width: 100%;
 }
 
-.left-body-footer select {
-  margin: 8px 0px 0px 0px;
+.left-body-footer-feel {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.today-condition {
+  color: gray;
+  font-size: 11px;
+  margin-bottom: 5px;
 }
 
 .wrapper-right {
   width: 524px;
   height: 472px;
-  padding: 15px 26px 0px 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  margin-left: 5px;
 }
 
 .wrapper-right-header {
@@ -125,9 +135,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  /* 양쪽 끝으로 밀어버리기 */
+  padding-bottom: 15px;
+  padding-top: 5px;
 }
 
-.wrapper-right-title {
+.right-header-title {
   width: 192px;
   height: 21px;
   font-family: "Malgun Gothic";
@@ -138,13 +151,28 @@
   color: #55b2d4;
 }
 
-.wrapper-right-private {
+.right-header-setting {
   width: 120px;
-  height: 18px;
+  height: 21px;
   font-family: "PFStardust";
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
-  line-height: 16px;
+  line-height: 21px;
   color: #55b2d4;
+}
+
+.wrapper-right-body {
+  width: 100%;
+  height: 94%;
+  border: 1px solid grey;
+  border-radius: 15px;
+  background-color: white;
+}
+
+/* %는 부모 태그의 상대적인 크기를 의미한다 */
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
