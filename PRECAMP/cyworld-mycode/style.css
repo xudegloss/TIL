@@ -21,7 +21,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
   height: 100%;
   padding: 6px;
 }
@@ -29,18 +28,18 @@
 #innerbox-left {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 215px;
   height: 472px;
 }
 
 #innerbox-left-header {
-  text-align: center;
   font-family: "Sci Fied Bitmap";
   font-style: normal;
   font-weight: 400;
   font-size: 9px;
-  line-height: 9px;
   color: #55b2d4;
+  margin-bottom: 7px;
 }
 
 #innerbox-left-body {
@@ -108,15 +107,20 @@
 }
 
 #innerbox-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 472px;
   width: 593px;
+  padding-right: 5px;
 }
 
 #innerbox-right-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0px 26px;
+  align-items: center;
+  padding-bottom: 5px;
 }
 
 #right-header-title {
@@ -124,7 +128,6 @@
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
-  line-height: 21px;
   color: #55b2d4;
 }
 
@@ -133,6 +136,17 @@
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
-  line-height: 16px;
   color: #55b2d4;
+}
+
+#innerbox-right-body {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 5px;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
