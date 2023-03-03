@@ -3,21 +3,21 @@
   margin: 0px;
 }
 
-#background {
+.background {
   width: 1024px;
   height: 600px;
   padding: 20px;
-  background-image: url("./../cyworld/images/background.png");
+  background-image: url("./../../cyworld/images/background.png");
 }
 
-#outerbox {
+.outerbox {
   width: 808px;
   height: 544px;
-  background-image: url("./../cyworld/images/outer-box.png");
+  background-image: url("./../../cyworld/images/outer-box.png");
   padding: 24px 26px 24px 26px;
 }
 
-#innerbox {
+.innerbox {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -25,7 +25,7 @@
   padding: 6px;
 }
 
-#innerbox-left {
+.innerbox-left {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,7 +33,7 @@
   height: 472px;
 }
 
-#innerbox-left-header {
+.innerbox-left-header {
   font-family: "Sci Fied Bitmap";
   font-style: normal;
   font-weight: 400;
@@ -42,7 +42,7 @@
   margin-bottom: 7px;
 }
 
-#innerbox-left-body {
+.innerbox-left-body {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -55,14 +55,14 @@
   padding: 20px 30px;
 }
 
-#left-body-header {
+.left-body-header {
   width: 148px;
   height: 133px;
-  background-image: url("./../cyworld/images/profile.jpg");
+  background-image: url("./../../cyworld/images/profile.jpg");
   background-size: 148px 133px;
 }
 
-#left-body-profile {
+.left-body-profile {
   display: flex;
   flex-direction: column;
   width: 148px;
@@ -70,7 +70,7 @@
   border-top: 1px dotted gray;
 }
 
-#left-body-profile span {
+.left-body-profile span {
   padding: 5px;
   font-family: "Malgun Gothic";
   font-style: normal;
@@ -80,16 +80,16 @@
   color: #999999;
 }
 
-#left-body-profile i {
+.left-body-profile i {
   color: black;
 }
 
 /* first-child 이용하여 첫 번째 인자만 css 처리하기 */
-#left-body-profile span:first-child {
+.left-body-profile span:first-child {
   margin-top: 5px;
 }
 
-#left-body-footer {
+.left-body-footer {
   display: flex;
   flex-direction: column;
   width: 148px;
@@ -102,11 +102,11 @@
   color: #000000;
 }
 
-#left-body-footer select {
+.left-body-footer select {
   margin-top: 9px;
 }
 
-#innerbox-right {
+.innerbox-right {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -115,7 +115,7 @@
   padding-right: 5px;
 }
 
-#innerbox-right-header {
+.innerbox-right-header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -123,7 +123,7 @@
   padding-bottom: 5px;
 }
 
-#right-header-title {
+.right-header-title {
   font-family: "Malgun Gothic";
   font-style: normal;
   font-weight: 700;
@@ -131,7 +131,7 @@
   color: #55b2d4;
 }
 
-#right-header-private {
+.right-header-private {
   font-family: "PFStardust";
   font-style: normal;
   font-weight: 500;
@@ -139,7 +139,7 @@
   color: #55b2d4;
 }
 
-#innerbox-right-body {
+.innerbox-right-body {
   width: 100%;
   height: 100%;
   margin-bottom: 5px;
