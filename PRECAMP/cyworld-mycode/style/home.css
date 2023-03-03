@@ -32,8 +32,6 @@ body {
 }
 
 .contents-title {
-  font-family: "Malgun Gothic";
-  font-style: normal;
   font-weight: 700;
   font-size: 13px;
   color: #55b2d4;
@@ -42,8 +40,6 @@ body {
 }
 
 .contents-sub-title {
-  font-family: "Sci Fied Bitmap";
-  font-style: normal;
   font-weight: 400;
   font-size: 8px;
   color: #000000;
