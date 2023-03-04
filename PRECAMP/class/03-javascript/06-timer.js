@@ -9,11 +9,12 @@ let time = 180;
 const takeTarget = () => {
   setInterval(function () {
     if (time >= 0) {
+      time = time - 1; // 여기서 빼줘야 3분에서 3분 또 출력되지 않고, 바로 2분 59초로 넘어간다.
       let min = Math.floor(time / 60);
       let sec = String(time % 60).padStart(2, "0");
       remainingMin.innerText = min;
       remainingSec.innerText = sec;
-      time = time - 1;
+      // time = time - 1
     } else {
       completeBtn.disabled = true;
     }
