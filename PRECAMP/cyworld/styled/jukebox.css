@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.wrapper-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 8px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 13px;
+  color: #55b2d4;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 8px;
+  margin-left: 5px;
+}
+
+.divideLine {
+  border: none;
+  border-top: 1px solid gray;
+}
+
+.album-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.album {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  font-weight: 700;
+  font-size: 11px;
+  color: #0f465e;
+}
+
+.sub-content {
+  font-weight: 700;
+  font-size: 10px;
+  color: #999999;
+}
+
+.wrapper-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.album-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-name {
+  border-top: 1px solid #999999;
+  border-bottom: 1px solid #999999;
+  background-color: #eeeeee;
+  display: flex;
+  flex-direction: row;
+  font-weight: 700;
+  font-size: 13px;
+  color: #999999;
+  padding: 3px;
+}
+
+.short-name {
+  width: 76px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 5px;
+  align-items: center;
+}
+
+.short-name span {
+  width: 50%;
+}
+
+.long-name {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 0px 10px;
+}
+
+.long-name span {
+  width: 50%;
+}
+
+.table-content {
+  border: none;
+  border-bottom: 1px dashed #999999;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 4px 0px 4px 8px;
+}
+
+.small-content {
+  width: 18%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 10px;
+}
+
+.small-content span {
+  width: 50%;
+}
+
+.large-content {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 10px;
+  color: #0f465e;
+}
+
+.large-content span {
+  width: 50%;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Jukebox</title>
+    <link rel="stylesheet" href="./styled/jukebox.css" />
+    <script src="./jukebox.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="wrapper-header">
+        <div class="wrapper-title">
+          <div class="title">추억의 BGM</div>
+          <div class="subtitle">TODAY CHOICE</div>
+        </div>
+        <div class="divideLine"></div>
+        <div class="album-wrapper">
+          <div class="album">
+            <img src="./images/album1.png" alt="album1" />
+            <div class="content">Y(Please Tell Me Why)</div>
+            <div class="sub-content">프리스타일</div>
+          </div>
+          <div class="album">
+            <img src="./images/album2.png" alt="album2" />
+            <div class="content">눈의 꽃</div>
+            <div class="sub-content">박효신</div>
+          </div>
+          <div class="album">
+            <img src="./images/album3.png" alt="album3" />
+            <div class="content">사랑했나봐</div>
+            <div class="sub-content">윤도현</div>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper-body">
+        <div class="wrapper-title">
+          <div class="title">추억의 BGM</div>
+          <div class="subtitle">TODAY CHOICE</div>
+        </div>
+        <div class="album-table">
+          <div class="table-name">
+            <div class="short-name">
+              <input
+                type="checkbox"
+                id="total-check"
+                onclick="totalCheckBox()"
+              />
+              <span>번호</span>
+            </div>
+            <div class="long-name">
+              <span>곡명</span>
+              <span>아티스트</span>
+            </div>
+          </div>
+          <div class="table-content">
+            <div class="small-content">
+              <input type="checkbox" id="checkbox" />
+              <span>1</span>
+            </div>
+            <div class="large-content">
+              <span>눈의 꽃</span>
+              <span>박효신</span>
+            </div>
+          </div>
+          <div class="table-content">
+            <div class="small-content">
+              <input type="checkbox" id="checkbox" />
+              <span>2</span>
+            </div>
+            <div class="large-content">
+              <span>사랑스러워</span>
+              <span>김종국</span>
+            </div>
+          </div>
+          <div class="table-content">
+            <div class="small-content">
+              <input type="checkbox" id="checkbox" />
+              <span>3</span>
+            </div>
+            <div class="large-content">
+              <span>내사람: Partner For Life</span>
+              <span>SG 워너비</span>
+            </div>
+          </div>
+          <div class="table-content">
+            <div class="small-content">
+              <input type="checkbox" id="checkbox" />
+              <span>4</span>
+            </div>
+            <div class="large-content">
+              <span>Love Love Love</span>
+              <span>에픽하이</span>
+            </div>
+          </div>
+          <div class="table-content">
+            <div class="small-content">
+              <input type="checkbox" id="checkbox" />
+              <span>5</span>
+            </div>
+            <div class="large-content">
+              <span>애인...있어요</span>
+              <span>이은미</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
