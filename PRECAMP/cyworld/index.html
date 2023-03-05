@@ -3,6 +3,7 @@
   <head>
     <title>김노정님의 미니홈피 :: 사이좋은 사람들, 싸이월드</title>
     <link rel="stylesheet" href="./styled/index.css" />
+    <script src="./index.js" defer></script>
   </head>
   <body>
     <div class="background">
@@ -57,7 +58,22 @@
               <div class="right-header-setting">사생활보호설정▶</div>
             </div>
             <div class="wrapper-right-body">
-              <iframe src="./jukebox.html"></iframe>
+              <iframe id="contentFrame" src="./home.html"></iframe>
+            </div>
+          </div>
+          <div class="navigation">
+            <div class="navigation-item" id="menuHome" onclick="menuHome()">
+              홈
+            </div>
+            <div
+              class="navigation-item"
+              id="menuJukebox"
+              onclick="menuJukebox()"
+            >
+              쥬크박스
+            </div>
+            <div class="navigation-item" id="menuGame" onclick="menuGame()">
+              게임
             </div>
           </div>
         </div>

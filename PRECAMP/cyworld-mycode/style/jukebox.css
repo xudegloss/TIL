@@ -1,0 +1,134 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  border: 1px solid gray;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.wrapper-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-bottom: 8px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 13px;
+  color: #55b2d4;
+}
+
+.subtitle {
+  font-weight: 400;
+  font-size: 8px;
+  margin-left: 5px;
+}
+
+.divideLine {
+  border: none;
+  border-top: 1px solid gray;
+}
+
+.album-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.album {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content {
+  font-weight: 700;
+  font-size: 11px;
+  color: #0f465e;
+}
+
+.sub-content {
+  font-weight: 700;
+  font-size: 10px;
+  color: #999999;
+}
+
+.wrapper-body {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.album-table {
+  width: 100%;
+  /* border-spacing : 중간 중간 경계를 없애줄 수 있다. */
+  border-spacing: 0px;
+}
+
+.albumTable__song {
+  text-align: left;
+}
+
+.albumTable__artist {
+  text-align: left;
+}
+
+.album-table th {
+  height: 20px;
+  font-size: 10px;
+  font-weight: bold;
+  color: gray;
+  background-color: #eeeeee;
+  padding: 3px 0px;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  vertical-align: center;
+}
+
+.album-table td {
+  height: 20px;
+  font-size: 10px;
+  color: #0f465e;
+  border-bottom: 1px dashed gray;
+}
+
+.album-table-checkbox {
+  width: 5%;
+  text-align: center;
+}
+
+.album-table-number {
+  width: 10%;
+  text-align: center;
+}
+
+.album-number-song {
+  width: 45%;
+  text-align: left;
+}
+
+.album-table-artist {
+  width: 30%;
+  text-align: left;
+}

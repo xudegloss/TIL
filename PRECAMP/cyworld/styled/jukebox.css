@@ -58,6 +58,7 @@ body {
 }
 
 .content {
+  padding-top: 3px;
   font-weight: 700;
   font-size: 11px;
   color: #0f465e;
