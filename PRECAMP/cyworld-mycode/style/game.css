@@ -115,22 +115,46 @@ body {
 .random-number {
   width: 130px;
   height: 21px;
-  background-color: #ffe400;
-  border: 1px solid black;
-  border-radius: 8px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 10px 8px;
   margin-top: 15px;
 }
 
-.random-btn {
+.random-number button {
+  margin: 1px;
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+/* 등차수열 이용하기 */
+
+.random-number button:nth-child(n) {
+  background-color: #faab78;
+}
+
+.random-number button:nth-child(3n-1) {
+  background-color: #fcf9be;
+}
+
+.random-number button:nth-child(3n) {
+  background-color: #e8f3d6;
+}
+
+#lotto__result {
+  font-size: 15px;
+  color: black;
+  font-weight: 700;
+  padding-top: 10px;
+}
+
+/* .random-btn {
   width: 62px;
   height: 24px;
   background-color: white;
   border: 1px solid black;
   border-radius: 5px;
   margin-top: 15px;
-}
+} */

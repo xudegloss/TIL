@@ -3,6 +3,7 @@
   <head>
     <title>Game</title>
     <link rel="stylesheet" href="./style/game.css" />
+    <script src="./app/game.js" defer></script>
   </head>
   <body>
     <div class="wrapper">
@@ -24,8 +25,9 @@
             type="text"
             class="word-input"
             placeholder="단어를 입력하세요."
+            id="myword"
           />
-          <button class="word-search">검색</button>
+          <button class="word-search" onclick="startGame()">검색</button>
         </div>
         <div class="target-result" id="result">결과!</div>
       </div>
@@ -33,15 +35,16 @@
         <img src="./../cyworld/images/lotto.png" alt="lotto" />
         <div class="game-title">LOTTO</div>
         <div class="target-word">버튼을 누르세요.</div>
-        <div class="random-number">
-          <span>3</span>
-          <span>5</span>
-          <span>10</span>
-          <span>24</span>
-          <span>30</span>
-          <span>34</span>
+        <div class="random-number" id="user__number">
+          <button onclick="saveUserNum(event)">3</button>
+          <button onclick="saveUserNum(event)">5</button>
+          <button onclick="saveUserNum(event)">10</button>
+          <button onclick="saveUserNum(event)">24</button>
+          <button onclick="saveUserNum(event)">30</button>
+          <button onclick="saveUserNum(event)">34</button>
         </div>
-        <button class="random-btn">Button</button>
+        <span id="lotto__result">결과는?</span>
+        <!-- <button class="random-btn" onclick="saveUserNum()">Button</button> -->
       </div>
     </div>
   </body>
