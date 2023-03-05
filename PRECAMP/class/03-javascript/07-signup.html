@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>Signup</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0px;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+      }
+
+      .wrapper {
+        width: 50%;
+        height: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      #submit {
+        font-weight: 700;
+        color: black;
+        border: 1px solid gray;
+        border-radius: 5px;
+      }
+
+      #comment {
+        color: red;
+        font-weight: 700;
+      }
+    </style>
+    <script src="./07-signup.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <input type="text" id="email" oninput="checkValidation()" />
+      <input type="text" id="pw1" oninput="checkValidation()" />
+      <input type="text" id="pw2" oninput="checkValidation()" />
+      <button id="submit" disabled="true">회원가입</button>
+    </div>
+  </body>
+</html>
