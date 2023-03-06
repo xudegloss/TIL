@@ -150,3 +150,35 @@ iframe {
   height: 100%;
   border: none;
 }
+
+/* absolute  */
+/* left : ~ px 의 의미는 왼쪽부터 ~ px 만큼 떨어져있다는 의미이다. */
+.navigation {
+  height: 100px;
+  position: absolute;
+  top: 90px;
+  left: 790px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navigation__item {
+  width: 60px;
+  height: 30px;
+  border: 1px solid #0f465e;
+  padding: 2px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 30px;
+  background-color: #298eb5;
+  border-radius: 0px 5px 5px 0px;
+  color: white;
+  cursor: pointer;
+}
+
+.navigation__item:nth-child(1) {
+  background-color: white;
+  color: black;
+}

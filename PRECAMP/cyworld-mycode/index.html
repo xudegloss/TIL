@@ -4,6 +4,7 @@
     <title>김노정님의 미니홈피 :: 사이좋은 사람들, 싸이월드</title>
     <!-- 꼭 css 파일을 연결하는 것을 잊지 않기 -->
     <link rel="stylesheet" href="./style/index.css" />
+    <script src="./app/index.js" defer></script>
   </head>
   <body>
     <div class="background">
@@ -46,8 +47,13 @@
               <div class="right-header-private">사생활보호설정▶</div>
             </div>
             <div class="innerbox-right-body">
-              <iframe src="./game.html"></iframe>
+              <iframe src="./home.html" id="page__content"></iframe>
             </div>
+          </div>
+          <div class="navigation">
+            <div class="navigation__item" id="menuHome" onclick="movePageHome()">홈</div>
+            <div class="navigation__item" id="menuJukeBox" onclick="movePageJukeBox()">쥬크박스</div>       
+            <div class="navigation__item" id="menuGame" onclick="movePageGame()">게임</div>       
           </div>
         </div>
       </div>
