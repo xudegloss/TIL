@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 중복되는 부분 제거하기 위하여 주석 처리하기. */
+/* 공통되는 클래스를 지정하면 된다. */
+
+/* .float__left {
+  width: 300px;
+  height: 400px;
+  background-color: tomato;
+  padding: 20px;
+  color: #ffffff;
+}
+
+.float__right {
+  width: 300px;
+  height: 200px;
+  background-color: midnightblue;
+  color: #ffffff;
+  padding: 20px;
+} */
+
+.float__box {
+  width: 300px;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.float__left {
+  height: 400px;
+  background-color: tomato;
+  float: left;
+}
+
+.float__right {
+  height: 200px;
+  background-color: midnightblue;
+  float: right;
+}
+
+/* .clear {
+  clear: right;
+} */
+
+/* clear : both 설정을 줄 수 있다. */
+.clearfix {
+  clear: both;
+}

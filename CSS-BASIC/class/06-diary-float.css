@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+  /* 기본 margin, padding 제거하기.*/
+  /* 기본 표준 폰트 사이즈는 16px ~ 18px 이다. */
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  /* div는 block 요소이기 때문에, width 굳이 설정할 필요가 없다. */
+  /* width: 100%; */
+  background-color: #eeeeee;
+}
+
+.home__menu {
+  width: 100%;
+  height: 100%;
+  background-color: #ff8709;
+}
+
+.icon__contents {
+  width: 900px;
+  height: 100%;
+  /* 가운데 정렬 이용하기. */
+  margin: 0 auto;
+}
+
+.logo {
+  /* background-color: red; */
+  float: left;
+  width: 100px;
+  padding-top: 8px;
+}
+
+.menu {
+  /* background-color: yellow; */
+  float: left;
+  /* 3가지 요소가 합쳐질 때 100%가 되도록 만든다. */
+  /* 반드시 공백을 만들어야 된다. */
+  width: calc(100% - 200px);
+  text-align: center;
+}
+
+.menu__ul {
+  /* inline : text-align 조정 가능, block : 길이, 너비 조정 가능 */
+  display: inline-block;
+}
+
+.menu__ul li {
+  float: left;
+  padding: 0 25px;
+}
+
+/* inline 요소 */
+.menu__ul li a {
+  display: block;
+  padding: 20px;
+}
+
+.menu__ul li a:hover {
+  color: white;
+}
+
+.user__info {
+  /* background-color: green; */
+  float: left;
+  width: 100px;
+  padding-top: 13px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+/* a 태그 밑줄 제거하기. */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* li 점 없애기. */
+li {
+  list-style: none;
+}
+
+.wrapper {
+  background-color: white;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  width: 800px;
+  height: 500px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.wrapper__head {
+  border-bottom: 3px dashed #c4c4c4;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.head__title {
+  background-color: #ff8709;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
+
+.head__subtitle {
+  display: flex;
+  flex-direction: column;
+}
+
+#point {
+  color: #f4b800;
+  text-decoration: underline;
+  /* in-line 요소라서 원래 안 되는데, flex 설정해줘서 잘 돌아간다. */
+  margin-top: 30px;
+}
+
+.wrapper__body {
+  width: 100%;
+  height: 200px;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 15px;
+}
+
+.body__title {
+  font-size: 20px;
+  background-color: #eeeeee;
+  line-height: 40px;
+}
+
+.body__contents {
+  padding-top: 20px;
+}
+
+.red {
+  color: red;
+}
+
+.yellow {
+  color: #f4b800;
+}
+
+.blue {
+  color: #2f58cd;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.body__footer {
+  color: #919191;
+  /* end를 입력하여 맨 끝으로 움직일 수 있다. */
+  text-align: end;
+}
