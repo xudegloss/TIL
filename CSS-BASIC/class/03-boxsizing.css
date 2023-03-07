@@ -1,0 +1,72 @@
+/* 3개의 박스의 가독성을 높여주는 보조 역할 */
+.container {
+  background-color: #c4c4c4;
+  margin-bottom: 20px;
+}
+
+/* width가 300px이다. */
+.box1 {
+  width: 200px;
+  height: 200px;
+  background-color: deepskyblue;
+  border: 3px solid blue;
+  box-sizing: content-box;
+  padding: 50px;
+}
+
+/* width가 200px이다. */
+.box2 {
+  width: 200px;
+  height: 200px;
+  background-color: yellow;
+  border: 3px solid green;
+  box-sizing: border-box;
+  padding: 50px;
+}
+
+/* 기본이 content-box이다. */
+.box3 {
+  width: 200px;
+  height: 200px;
+  background-color: violet;
+  border: 3px solid purple;
+  padding: 50px;
+}
+
+.container__span {
+  margin-bottom: 20px;
+}
+
+/* inline 요소이다. */
+/* 위의 태그는 block 요소이다. */
+.text {
+  width: 200px;
+  height: 50px;
+  background-color: salmon;
+}
+
+.block__container {
+  border: 3px solid blue;
+}
+
+/* block 요소들은 내용과 관계없이 채워서 보여준다. */
+.block__container div {
+  border: 3px solid green;
+  width: 400px;
+  /* 적용된다. */
+  display: inline;
+  /* FROM block TO inline */
+}
+
+.inline__container {
+  border: 3px solid red;
+}
+
+/* inline 요소들은 내용의 길이를 고려하여 보여준다. */
+.inline__container span {
+  background-color: violet;
+  width: 400px;
+  /* 적용되지 않는다. : inline의 특징 */
+  display: block;
+  /* FROM inline TO block  */
+}

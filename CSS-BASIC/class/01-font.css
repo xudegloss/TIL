@@ -1,0 +1,24 @@
+.title {
+  color: red;
+}
+
+/* 자손 선택자 */
+.box1 .title {
+  color: yellow;
+}
+
+.contents {
+  font-size: 28px;
+  /* font-style: normal; 기본값 */
+  font-style: italic;
+  /* 기울이기 */
+  text-decoration: underline;
+  /* 밑줄긋기 */
+  font-weight: 600;
+  /* 기본값 : 400 */
+}
+
+/* 다중 선택자 */
+.title#headline {
+  color: violet;
+}
