@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+.button__first:active {
+  background-color: tomato;
+  border: 1px solid #eeeeee;
+  border-radius: 5px;
+  padding: 3px 7px;
+  color: white;
+  font-weight: 700;
+}
+
+.input__first:focus {
+  background-color: violet;
+}
+
+.link__first:visited {
+  color: green;
+}

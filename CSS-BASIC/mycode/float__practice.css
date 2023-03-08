@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.float__header {
+  width: 200px;
+  height: 100%;
+  height: 60px;
+  color: white;
+  font-weight: 700;
+}
+
+.float__left {
+  background-color: #43a6f5;
+  float: left;
+  padding: 20px 60px;
+}
+
+.float__right {
+  background-color: #f66055;
+  float: right;
+  padding: 20px 50px;
+}
+
+.menu__ul {
+  float: left;
+  background-color: #c4c4c4;
+  width: calc(100% - 400px);
+  height: 60px;
+  text-align: center;
+}
+
+/* li은 block 요소이다. */
+.menu__ul li {
+  display: inline-block;
+  padding: 15px 30px;
+  list-style: none;
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.menu__ul li:hover {
+  color: seagreen;
+}
+
+/* 위에서 width, height 지정하여 필요 없게 되었다. */
+/* .clearfix {
+  clear: both;
+} */
+
+.content {
+  background-color: #eeeeee;
+  width: 500px;
+  float: right;
+}
+
+.box__sayHello {
+  background-color: wheat;
+  width: 200px;
+  height: 200px;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 70px;
+  margin: 0 auto;
+}
+
+.clearfix {
+  clear: both;
+}
