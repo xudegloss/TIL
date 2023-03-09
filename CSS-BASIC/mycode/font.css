@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 10px;
+  font-size: 20px;
+}
+
+.font__ex {
+  font-size: 40px;
+  font-weight: 700;
+  color: midnightblue;
+}
+
+.text__decoration__ex {
+  border: 1px solid green;
+}
+
+.text__decoration__ex p {
+  padding: 10px;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.overline {
+  text-decoration: overline;
+}
+
+.line__through {
+  text-decoration: line-through;
+}
+
+.line__height__ex {
+  border: 1px solid purple;
+}
+
+.line__height__first {
+  line-height: 2;
+  /* 선 높이 = 20px X 2 = 40px */
+}
+
+/* 위와 아래는 같은 의미를 담고 있다. */
+.line__height__sec {
+  line-height: 40px;
+}
+
+.spacing__ex {
+  border: 1px solid red;
+}
+
+.letter__spacing {
+  letter-spacing: 5px;
+  /* 음수도 가능하다. */
+}
+
+.word__spacing {
+  word-spacing: 5px;
+  /* 음수도 가능하다. */
+}
+
+.text__align__ex {
+  border: 1px solid blue;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.right {
+  text-align: right;
+}
+
+.justify {
+  /* text 안에 모두 넣어주려고 한다. 띄어쓰기가 모두 달라서 가독성이 떨어질 수 있다. */
+  border: 1px solid pink;
+  text-align: justify;
+}
+
+.vertical__align {
+  border: 1px solid violet;
+  font-size: 100px;
+}
+
+.top {
+  vertical-align: top;
+  border: 1px solid black;
+}
+
+.middle {
+  vertical-align: middle;
+  border: 1px solid black;
+}
+
+.super {
+  vertical-align: super;
+  border: 1px solid black;
+}
+
+.bottom {
+  vertical-align: bottom;
+  border: 1px solid black;
+}
+
+.text__indent__ex {
+  border: 1px solid yellowgreen;
+}
+
+.positive {
+  text-indent: 50%;
+}
+
+.zero {
+  text-indent: 0;
+}
+
+.negative {
+  text-indent: -30px;
+}
+
+.text__transform {
+  border: 1px solid slateblue;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.word__break {
+  border: 1px solid gray;
+}
+
+.keep__all {
+  word-break: keep-all;
+}
+
+.break__all {
+  word-break: break-all;
+}
+
+.test {
+  width: 100px;
+  border: 1px solid seagreen;
+  background-color: yellow;
+  padding: 10px;
+}
+
+.test span {
+  text-transform: uppercase;
+}
+
+.content {
+  width: 100%;
+  word-break: keep-all;
+}
+
+.content__test {
+  width: 100%;
+  overflow-wrap: break-word;
+}
