@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* grid-template-columns 이용하기. */
+.container {
+  background-color: #c4c4c4;
+  display: grid;
+  /* 3 X 3 배열 만들기. */
+  grid-template-columns: auto auto auto;
+}
+
+.container div {
+  background-color: midnightblue;
+  margin: 10px;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+/* grid-template-area 이용하기. */
+.item1 {
+  grid-area: header;
+  background-color: pink;
+}
+.item2 {
+  grid-area: menu;
+  background-color: yellow;
+}
+.item3 {
+  grid-area: main;
+  background-color: tomato;
+}
+.item4 {
+  grid-area: right;
+  background-color: aquamarine;
+}
+.item5 {
+  grid-area: footer;
+}
+
+.container__homepage {
+  background-color: skyblue;
+  border: 1px solid #2196f3;
+  display: grid;
+  grid-template-areas:
+    "header header header header"
+    "menu main main right "
+    "menu footer footer footer";
+  height: 300px;
+  margin-top: 50px;
+}
+
+.container__homepage div {
+  border: 5px solid #2196f3;
+  font-weight: 700;
+  font-size: 30px;
+  /* 수직 정렬은 inline 태그인 경우에만 가능하다. */
+  /* 따라서 div는 정렬하고 싶은 요소에 flex를 활용하여 정렬하는 것이 편리하다. */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
