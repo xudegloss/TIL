@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  border: 3px solid red;
+  padding: 10px;
+  position: relative;
+}
+
+.wrapper {
+  border: 1px solid blue;
+  padding: 10px;
+  /* 여기가 절대적인 기준이 된다. */
+  position: relative;
+}
+
+.item {
+  width: 200px;
+  height: 100px;
+  background-color: lime;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
