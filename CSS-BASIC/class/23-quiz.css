@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.box {
+  width: 700px;
+  height: 150px;
+  background-image: linear-gradient(to top, orange, red);
+  font-weight: 700;
+  color: white;
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+/* 여기에 transition 설정하기. */
+.box span {
+  transition-property: transform;
+  transition-duration: 0.4s;
+  transition-timing-function: ease-in-out;
+}
+
+.box #text1 {
+  transition-delay: 0s;
+}
+
+.box #text2 {
+  transition-delay: 0.1s;
+}
+
+.box #text3 {
+  transition-delay: 0.2s;
+}
+
+.box #text4 {
+  transition-delay: 0.3s;
+}
+
+.box #text5 {
+  transition-delay: 0.4s;
+}
+
+.box #text6 {
+  transition-delay: 0.5s;
+}
+
+.box #text7 {
+  transition-delay: 0.6s;
+}
+
+.box #text8 {
+  transition-delay: 0.7s;
+}
+
+.box #text9 {
+  transition-delay: 0.8s;
+}
+
+/* hover 적용 시에 변경되는 사항 넣어주기. */
+.box:hover span {
+  /* 위로 가고 싶으면 - 붙여주기. */
+  transform: translateY(-20px);
+}
