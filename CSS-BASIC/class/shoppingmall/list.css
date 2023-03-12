@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  align-items: flex-start;
+  align-content: flex-start;
 }
 
 .item {
@@ -23,6 +23,7 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
+  margin-bottom: 15px;
 }
 
 /* 마우스 올렸을 때 색깔 변경되는 것 보여주기 위하여 */
@@ -53,20 +54,24 @@ body {
 
 .textBox__name {
   opacity: 0;
+  transform: translateY(50px);
 }
 
 .textBox__price {
   opacity: 0;
+  transform: translateY(50px);
 }
 
 .item:hover .textBox__name {
   opacity: 1;
-  transform: translateY(-10px);
+  transform: translateY(0px);
+  transition-delay: 0s;
 }
 
 .item:hover .textBox__price {
   opacity: 1;
-  transform: translateY(-10px);
+  transform: translateY(0px);
+  transition-delay: 0.1s;
 }
 
 .imgBox {
