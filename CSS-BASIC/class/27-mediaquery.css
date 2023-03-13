@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.box {
+  height: 200px;
+  background-color: blue;
+  color: white;
+  padding: 30px;
+}
+
+/* 600px 이하인 경우 */
+@media screen and (max-width: 600px) {
+  .box {
+    background-color: red;
+  }
+}
+
+.box1 {
+  background-color: tomato;
+  width: 20%;
+  padding: 30px;
+}
+
+.box2 {
+  background-color: aquamarine;
+  width: 80%;
+  padding: 30px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+/* 600px보다 큰 경우 */
+@media screen and (min-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .box1 {
+    width: 100%;
+  }
+  .box2 {
+    width: 100%;
+  }
+}
