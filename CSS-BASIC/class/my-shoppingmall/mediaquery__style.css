@@ -1,0 +1,420 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&family=Tilt+Warp&display=swap");
+
+/* 초기화하는 과정 */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Noto Sans KR", sans-serif;
+  font-family: "Tilt Warp", cursive;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 전체적인 레이아웃 잡기. */
+.mainBanner {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 280px;
+  margin-bottom: 20px;
+}
+
+.mainBanner .text {
+  font-size: 48px;
+}
+
+.total__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1320px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 10px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 170px;
+}
+
+.item__wrap {
+  width: calc(100% - 170px);
+  padding-left: 15px;
+}
+
+/* 아이템 박스 */
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: flex-start;
+}
+
+.item {
+  width: calc(25% - 7px);
+  /* 가로 / 세로 비율 */
+  aspect-ratio: 6/5;
+  /* relative 적용하고 absolute 적용하면 각자 위치에 잘 위치하게 된다. */
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* 마우스 올렸을 때 색깔 변경되는 것 보여주기 위하여 */
+.item:after {
+  width: 100%;
+  height: 100%;
+  content: "";
+  display: block;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+}
+
+.textBox__name {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.textBox__price {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.imgBox {
+  width: 100%;
+  height: 100%;
+}
+
+.imgBox img {
+  width: 100%;
+  height: 100%;
+  /* 이미지 망가지지 않게 하기 위하여 */
+  object-fit: cover;
+}
+
+.textBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 20px;
+  z-index: 3;
+}
+
+.textBox p {
+  color: white;
+  margin: 5px 0 0;
+}
+
+.textBox__name {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.textBox__price {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* 자연스럽게 트랜지션 적용하기. */
+.item:after,
+.item .imgBox img,
+.item .textBox__name,
+.item .textBox__price {
+  transition: all 0.4s ease-in-out;
+}
+
+/* 배너 */
+.mainBanner {
+  width: 100%;
+  height: 280px;
+  background-image: url("./images/banner.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainBanner .text {
+  font-size: 42px;
+  font-weight: 700;
+  color: white;
+  /* x축 y축 퍼지는 정도 색상 */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  /* 애니메이션 넣고 싶은 곳에 넣어주기. */
+  animation-name: titleText;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+/* 애니메이션 만들기 : 위로 튀어 올라오면서 내려가면서 튀기는 것처럼 자리에 정착하는 애니메이션 */
+/* 1. keyframes 만들기. */
+@keyframes titleText {
+  0% {
+    transform: translateY(70px);
+    opacity: 0;
+  }
+  92% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* 사이드바 */
+.main__menu {
+  width: 100%;
+  background-color: orange;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+.main__menu ul {
+  padding: 0;
+  display: block;
+}
+
+.main__menu ul li {
+  list-style: none;
+  display: block;
+}
+
+/* 리스트에 태그에 넣으면 옆에 클릭하면 넘어가기 때문이다.*/
+/* a태그에 넣어줘야 정확한 위치가 된다. */
+.main__menu ul li a {
+  display: block;
+  padding: 10px;
+  color: white;
+  border-radius: 20px;
+  transition-property: transform;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.writeBtnBox {
+  width: 100%;
+}
+
+.writeBtn {
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: left;
+  padding: 10px 20px;
+  margin-top: 10px;
+}
+
+.writeBtn span {
+  transition-property: transform;
+  transition-duration: 0.7s;
+  transition-timing-function: ease-in-out;
+}
+
+/* 반응형으로 변경하기. */
+@media screen and (max-width: 767px) {
+  /* mobile */
+  .mainBanner {
+    height: 160px;
+    margin: 0;
+  }
+
+  .mainBanner .text {
+    font-size: 26px;
+  }
+
+  .wrapper {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .item__wrap {
+    width: 100%;
+  }
+
+  .writeBtnBox {
+    display: none;
+  }
+
+  .main__menu {
+    border-radius: 0;
+  }
+
+  .main__menu ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main__menu ul li a {
+    font-size: 14px;
+  }
+
+  .item__wrap {
+    margin-top: 12px;
+  }
+
+  /* 사이즈를 변경하면 된다. */
+  .item {
+    width: calc(50% - 7px);
+    overflow: visible;
+    border: 1px solid #c4c4c4;
+  }
+
+  .textBox {
+    width: 100%;
+    position: relative;
+    height: auto;
+  }
+
+  .textBox__name {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  .textBox p {
+    color: black;
+  }
+
+  .textBox__price {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  .textBox__name {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .textBox__price {
+    font-size: 12px;
+  }
+
+  /* 자연스럽게 트랜지션 적용하기. */
+  .item:after,
+  .item .imgBox img,
+  .item .textBox__name,
+  .item .textBox__price {
+    transition: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /* tablet */
+  .item {
+    overflow: visible;
+    border: 1px solid #c4c4c4;
+  }
+
+  .textBox {
+    width: 100%;
+    position: relative;
+    height: auto;
+  }
+
+  .textBox__name {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  .textBox p {
+    color: black;
+  }
+
+  .textBox__price {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+
+  .textBox__name {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  .textBox__price {
+    font-size: 12px;
+  }
+
+  /* 자연스럽게 트랜지션 적용하기. */
+  .item:after,
+  .item .imgBox img,
+  .item .textBox__name,
+  .item .textBox__price {
+    transition: none;
+  }
+}
+
+/* hover는 pc에서만 가능하도록 */
+@media screen and (min-width: 1024px) {
+  .main__menu ul li a:hover {
+    background-color: rgb(255, 145, 0);
+    transform: translateX(10px);
+  }
+
+  /* inline 요소이기 때문에 변경하기. */
+  .writeBtn:hover span {
+    display: inline-block;
+    transform: translateX(50px);
+  }
+
+  .writeBtn:hover {
+    background-color: #ffffff;
+    color: #333333;
+    border: none;
+  }
+
+  .item:hover .textBox__name {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0s;
+  }
+
+  .item:hover .textBox__price {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.1s;
+  }
+
+  /* 가상 요소 선택자에서 hover 순서 유의*/
+  .item:hover:after {
+    opacity: 1;
+    transition-duration: 0.3s;
+  }
+
+  .item:hover .imgBox img {
+    transform: scale(1.1);
+    /* 블러 처리 해주기. */
+    filter: blur(3px);
+  }
+}
