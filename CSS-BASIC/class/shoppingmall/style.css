@@ -164,17 +164,35 @@
   transition: all 0.4s ease-in-out;
 }
 
+/* 정렬하기. */
+.total__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container__head {
+  width: 100%;
+}
+
+.mainBanner {
+  width: 100%;
+}
+
+.container__body {
+  margin-top: 5vh;
+  display: flex;
+  flex-direction: row;
+  width: 80%;
+}
+
 .body__menu {
-  display: grid;
-  grid-template-rows: 4fr 1fr;
-  text-align: center;
-  width: calc(40%);
-  height: 100px;
-  color: white;
-  font-weight: 500;
+  margin-right: 30px;
 }
 
 .menu__list {
+  width: 15vw;
+  aspect-ratio: 1 /2;
   background-color: orange;
   display: flex;
   flex-direction: column;
@@ -186,6 +204,7 @@
 .menu__list .list {
   padding: 15px;
   list-style: none;
+  color: white;
 }
 
 .menu__registration {
@@ -195,20 +214,5 @@
   justify-content: flex-start;
   align-items: center;
   margin-top: 10px;
-}
-
-.total__container {
-  display: flex;
-  flex-direction: column;
-}
-
-.container__body {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 100px;
-}
-
-.container {
-  margin-left: 50px;
+  color: white;
 }
