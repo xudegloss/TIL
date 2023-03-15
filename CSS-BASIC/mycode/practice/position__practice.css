@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.container {
+  background-color: lime;
+}
+
+.container div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.container .item {
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.item:nth-of-type(1),
+.item:nth-of-type(3) {
+  background-color: tomato;
+}
+
+.item:nth-child(2) {
+  background-color: yellow;
+}
+
+/* 기본값 */
+.static {
+  position: static;
+}
+
+/* 상대적인 위치 */
+.relative .item:nth-child(1) {
+  position: relative;
+  top: -50px;
+  left: 300px;
+}
+
+.relative .item:nth-child(2) {
+  position: relative;
+  top: 50px;
+  left: 300px;
+}
+
+/* 절대적인 위치 */
+.container {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+  top: 30px;
+  left: 0;
+}
+
+/* fixed와 sticky로 메뉴 만들기. */
+.fixed__container {
+  height: 200px;
+  overflow: auto;
+  margin-top: 150px;
+  background-color: #eeeeee;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 200px;
+  height: 75px;
+  padding: 1rem;
+  color: white;
+  background: teal;
+  font-weight: bold;
+}
+
+/* sticky로 메뉴 만들기. */
+.sticky__container {
+  background-color: #eeeeee;
+  overflow: auto;
+  height: 200px;
+  margin-top: 10px;
+}
+
+.sticky__menu {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.sticky {
+  background-color: deepskyblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  color: white;
+  font-weight: 700;
+}
+
+p {
+  padding-top: 20px;
+}
