@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+}
+
+/* 반응형 웹 제작하기. */
+@media screen and (max-width: 767px) {
+  .container {
+    background-color: violet;
+  }
+  .content:after {
+    content: " 저는 mobile입니다.";
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    background-color: deeppink;
+  }
+  .content:after {
+    content: " 저는 tablet입니다.";
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    background-color: deepskyblue;
+  }
+  .content:after {
+    content: " 저는 pc입니다.";
+  }
+}
