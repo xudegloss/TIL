@@ -15,22 +15,28 @@
               type="email"
               placeholder="이메일을 입력해 주세요."
               id="email"
+              autocomplete="off"
             />
-            <div class="warning" id="warning__email">
-              이메일을 입력해 주세요.
-            </div>
-            <input type="text" placeholder="이름을 입력해 주세요." id="name" />
-            <div class="warning">이름을 입력해 주세요.</div>
+            <div class="warning">이메일을 입력해 주세요.</div>
+            <input
+              type="text"
+              placeholder="이름을 입력해 주세요."
+              id="name"
+              autocomplete="off"
+            />
+            <div class="warning" id="warning__name">이름을 입력해 주세요.</div>
             <input
               type="password"
               placeholder="비밀번호를 입력해 주세요."
               id="pw1"
+              autocomplete="off"
             />
             <div class="warning">비밀번호를 입력해 주세요.</div>
             <input
               type="password"
               placeholder="비밀번호를 다시 입력해 주세요."
               id="pw2"
+              autocomplete="off"
             />
             <div class="warning">비밀번호를 다시 한 번 확인해 주세요.</div>
             <div class="phone">
@@ -40,6 +46,7 @@
                 maxlength="3"
                 id="p1"
                 oninput="moveCursorFirst()"
+                autocomplete="off"
               />
               -
               <input
@@ -48,6 +55,7 @@
                 maxlength="4"
                 id="p2"
                 oninput="moveCursorSec()"
+                autocomplete="off"
               />
               -
               <input
@@ -56,6 +64,7 @@
                 maxlength="4"
                 id="p3"
                 oninput="moveCursorLast()"
+                autocomplete="off"
               />
             </div>
             <div class="warning">전화번호를 입력해 주세요.</div>
@@ -98,11 +107,11 @@
             <div class="warning">지역을 선택해 주세요.</div>
             <div class="sex" id="sex">
               <div class="women">
-                <input type="radio" id="women" name="sex" />
+                <input type="radio" id="women" name="sex" value="women" />
                 <label for="women">여성</label>
               </div>
               <div class="men">
-                <input type="radio" id="men" name="sex" />
+                <input type="radio" id="men" name="sex" value="men" />
                 <label for="men">남성</label>
               </div>
             </div>

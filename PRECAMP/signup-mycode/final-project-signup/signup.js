@@ -83,6 +83,7 @@ const sendNum = () => {
 
 // 6. 가입 버튼 누르면 위의 빈칸을 모두 채웠는지 검토하고, 다 채운 경우에는 가입을 축하한다는 메세지를 띄우기.
 const checkAll = () => {
+  const warning = document.querySelectorAll(".warning");
   const email = document.getElementById("email").value;
   const name = document.getElementById("name").value;
   const pw1 = document.getElementById("pw1").value;
@@ -90,4 +91,79 @@ const checkAll = () => {
   const p1 = document.getElementById("p1").value;
   const p2 = document.getElementById("p2").value;
   const p3 = document.getElementById("p3").value;
+
+  if (email === "") {
+    warning[0].style.display = "block";
+  } else {
+    warning[0].style.display = "none";
+  }
+
+  if (name === "") {
+    warning[1].style.display = "block";
+  } else {
+    warning[1].style.display = "none";
+  }
+
+  if ((pw1 === "") | (pw2 === "")) {
+    warning[2].style.display = "block";
+  } else {
+    warning[2].style.display = "none";
+  }
+
+  if (pw1 !== pw2) {
+    warning[3].style.display = "block";
+  } else {
+    warning[3].style.display = "none";
+  }
+
+  if ((p1 === "") | (p2 === "") | (p3 === "")) {
+    warning[4].style.display = "block";
+  } else {
+    warning[4].style.display = "none";
+  }
+
+  if (document.getElementById("region").options.selectedIndex === 0) {
+    warning[5].style.display = "block";
+  } else {
+    warning[5].style.display = "none";
+  }
+
+  radios = document.querySelector("input[type=radio][name=sex]:checked");
+  // console.log(!!radios);
+  if (!!radios) {
+    warning[6].style.display = "none";
+  } else {
+    warning[6].style.display = "block";
+  }
+
+  if (
+    (email !== "") &
+    (name !== "") &
+    (pw1 === pw2) &
+    (p1 !== "") &
+    (p2 !== "") &
+    (p3 !== "") &
+    (document.getElementById("region").options.selectedIndex !== 0) &
+    !!radios
+  ) {
+    alert("코드캠프 회원가입을 축하드립니다.");
+  }
+
+  // 아래 코드는 한꺼번에 처리하는 경우에 유용하다.
+  // for (let idx = 0; idx < warning.length - 1; idx++) {
+  //   if (
+  //     (email === "") |
+  //     (name === "") |
+  //     (p1 === "") |
+  //     (p2 === "") |
+  //     (p3 === "") |
+  //     (document.getElementById("region").options.selectedIndex === 0) |
+  //     (pw1 !== pw2)
+  //   ) {
+  //     warning[idx].style.display = "block";
+  //   } else {
+  //     warning[idx].style.display = "none";
+  //   }
+  // }
+  // 선택 인덱스 : console.log(document.getElementById("region").options.selectedIndex);
 };
