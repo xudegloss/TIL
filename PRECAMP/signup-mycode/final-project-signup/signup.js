@@ -131,6 +131,7 @@ const checkAll = () => {
   radios = document.querySelector("input[type=radio][name=sex]:checked");
   // console.log(!!radios);
   if (!!radios) {
+    // true
     warning[6].style.display = "none";
   } else {
     warning[6].style.display = "block";
