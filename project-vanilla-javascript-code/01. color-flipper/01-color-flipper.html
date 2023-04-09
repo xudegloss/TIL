@@ -9,17 +9,24 @@
     <header id="main__header">
       <h4 class="main__header__title">Color Flipper</h4>
       <div class="main__header__items">
-        <button class="main__header__items">Simple</button>
-        <button class="main__header__items">Hex</button>
+        <button
+          class="main__header__items"
+          onclick="leftBtnContainer()"
+          id="left__btn"
+        >
+          Simple
+        </button>
+        <button
+          class="main__header__items"
+          id="right__btn"
+          onclick="rightBtnContainer()"
+        >
+          Hex
+        </button>
       </div>
     </header>
     <div id="container">
-      <div class="wrapper">
-        <h1 class="background__color">
-          background color : <span id="background__color__name">#F1f5f8</span>
-        </h1>
-        <button class="clickBtn" onclick="changeBackGround()">CLICK ME</button>
-      </div>
+      <iframe src="./main-header-left.html" id="iframe"></iframe>
     </div>
   </body>
 </html>
