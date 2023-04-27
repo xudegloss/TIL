@@ -21,7 +21,7 @@ const btn = document.querySelectorAll(".btn");
 const leftBtn = document.querySelector(".left__btn");
 const rightBtn = document.querySelector(".right__btn");
 const img = document.querySelector(".image");
-let cnt = 1;
+let cnt = 0;
 
 // 오른쪽 버튼을 눌렀을 때, 오른쪽 방향으로 계속 넘어가기. 4를 넘어가는 순간에 undefined가 뜨기 때문에, %을 이용하자.
 // 왼쪽 버튼을 눌렀을 때, 왼쪽 방향으로 계속 넘어가기. -1이 되는 순간에 바로 4로 변경하기.
@@ -32,19 +32,19 @@ btn.forEach((btn) => {
     if (btn.id === "left__btn") {
       cnt -= 1;
       if (cnt < 0) {
-        cnt = 4;
+        cnt = 3;
       }
       items.forEach((item) => {
         let objectKey = item.id;
-        item.innerText = infoObject[objectKey][cnt % 4];
-        img.setAttribute("src", imgArray[cnt % 4]);
+        item.innerText = infoObject[objectKey][cnt % imgArray.length];
+        img.setAttribute("src", imgArray[cnt % imgArray.length]);
       });
     } else {
       cnt += 1;
       items.forEach((item) => {
         let objectKey = item.id;
-        item.innerText = infoObject[objectKey][cnt % 4];
-        img.setAttribute("src", imgArray[cnt % 4]);
+        item.innerText = infoObject[objectKey][cnt % imgArray.length];
+        img.setAttribute("src", imgArray[cnt % imgArray.length]);
       });
     }
   });
@@ -53,7 +53,7 @@ btn.forEach((btn) => {
 // Surprise Me : 랜덤하게 인물 가져오기.
 
 const randomClick = () => {
-  let randomIdx = Math.floor(Math.random() * 4);
+  let randomIdx = Math.floor(Math.random() * imgArray.length);
   items.forEach((item) => {
     let targetKey = item.id;
     item.innerText = infoObject[targetKey][randomIdx];
