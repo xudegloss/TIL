@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Bubbling</title>
+  </head>
+  <body>
+    <h1>Target</h1>
+    <div class="div__item__target">
+      <button class="div__item__target">1</button>
+      <button class="div__item__target">2</button>
+      <button class="div__item__target">3</button>
+    </div>
+    <h1>currentTarget</h1>
+    <div class="div__item">
+      <button class="div__item">1</button>
+      <button class="div__item">2</button>
+      <button class="div__item">3</button>
+    </div>
+  </body>
+  <script>
+    const items = document.querySelectorAll(".div__item");
+    const targets = document.querySelectorAll(".div__item__target");
+
+    targets.forEach((target) => {
+      // 2개 찍히는 이유 : 부모 태그의 클래스 이름도 같기 때문이다.
+      target.addEventListener("click", (event) => {
+        console.log(event.target.tagName);
+      });
+    });
+
+    items.forEach((item) => {
+      item.addEventListener("click", (event) => {
+        console.log(event.currentTarget.tagName);
+      });
+    });
+  </script>
+</html>
