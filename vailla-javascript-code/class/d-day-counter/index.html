@@ -6,9 +6,49 @@
     <script src="./app.js" defer></script>
   </head>
   <body>
-    <input type="text" id="target__year__input" class="target__input" /> -
-    <input type="text" id="target__month__input" class="target__input" /> -
-    <input type="text" id="target__date__input" class="target__input" />
-    <button onclick="countMaker()">Button</button>
+    <h1>D-Day Counter</h1>
+    <div id="d__day__container">
+      <!-- 자식 container 넣어주기. -->
+      <!-- 형제 태그에 같은 class 넣어주기. -->
+      <div class="d__day__child__container">
+        <span id="days">0</span>
+        <span>일</span>
+      </div>
+      <div class="d__day__child__container">
+        <span id="hours">0</span>
+        <span>시간</span>
+      </div>
+      <div class="d__day__child__container">
+        <span id="min">0</span>
+        <span>분</span>
+      </div>
+      <div class="d__day__child__container">
+        <span id="sec">0</span>
+        <span>초</span>
+      </div>
+    </div>
+    <div id="target__selector">
+      <input
+        type="text"
+        id="target__year__input"
+        class="target__input"
+        size="5"
+      />
+      -
+      <input
+        type="text"
+        id="target__month__input"
+        class="target__input"
+        size="5"
+      />
+      -
+      <input
+        type="text"
+        id="target__date__input"
+        class="target__input"
+        size="5"
+      />
+    </div>
+    <button onclick="countMaker()" id="start__btn">카운트다운 시작</button>
   </body>
 </html>

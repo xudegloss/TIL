@@ -46,4 +46,8 @@ const countMaker = function () {
   const remainingMins = Math.floor(remaining / 60) % 60;
   const remainingSecs = Math.floor(remaining) % 60;
   console.log(remainingDate, remainingHours, remainingMins, remainingSecs);
+
+  // 종료된 시간에 대하여 처리하기.
+  // 옳지 않는 입력값에 대하여 처리하기. (NaN이 되는 값)
+  // 이런 경우에 조건문을 이용하면 된다.
 };
