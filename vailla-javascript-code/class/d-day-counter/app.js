@@ -45,9 +45,29 @@ const countMaker = function () {
   const remainingHours = Math.floor(remaining / 3600) % 24;
   const remainingMins = Math.floor(remaining / 60) % 60;
   const remainingSecs = Math.floor(remaining) % 60;
-  console.log(remainingDate, remainingHours, remainingMins, remainingSecs);
+
+  // console.log(remainingDate, remainingHours, remainingMins, remainingSecs);
 
   // 종료된 시간에 대하여 처리하기.
   // 옳지 않는 입력값에 대하여 처리하기. (NaN이 되는 값)
   // 이런 경우에 조건문을 이용하면 된다.
+
+  // 수도 코드
+  // 만약 remaining이 0 또는 음수라면, 타이머가 종료되었습니다. 출력하기.
+
+  const container = document.getElementById("d__day__container");
+
+  // remaining === 0 || remaining < 0 : 논리 연산자 이용하기.
+  if (remaining <= 0) {
+    container.innerText = "타이머가 종료되었습니다.";
+  } else if (isNaN(remaining)) {
+    // 만약에 잘못된 날짜가 들어왔다면, 유효한 시간대가 아닙니다. 출력하기.
+    container.innerText = "유효한 시간대가 아닙니다.";
+  } else {
+    // 나중에 forEach 이용하여 한 번 구해보기.
+    document.getElementById("days").innerText = remainingDate;
+    document.getElementById("hours").innerText = remainingHours;
+    document.getElementById("min").innerText = remainingMins;
+    document.getElementById("sec").innerText = remainingSecs;
+  }
 };
