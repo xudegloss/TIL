@@ -6,23 +6,32 @@
 
 /* body 자체에 flex를 이용해줘도 된다. */
 
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#d__day__container {
+  padding: 30px;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+}
+
 h1 {
-  text-align: center;
   margin-top: 50px;
   font-size: 3rem;
 }
 
-#d__day__container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
-  font-size: 1.5rem;
-}
-
 #d__day__container div {
   margin: 0px 10px;
+}
+
+#d__day__message {
+  text-align: center;
+  padding: 30px;
 }
 
 #target__selector {
@@ -30,10 +39,7 @@ h1 {
   margin-bottom: 30px;
 }
 
-/* block + margin을 이용하여 버튼을 가운데 정렬하기. */
 #start__btn {
-  display: block;
-  margin: auto;
   padding: 5px 10px;
   font-size: 1.3rem;
 }

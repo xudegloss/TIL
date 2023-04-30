@@ -11,6 +11,16 @@
 // 함수명()
 // output();
 
+const containerMessage = document.querySelector("#d__day__message");
+const container = document.getElementById("d__day__container");
+
+// containerMessage.textContent = "D-Day를 입력해 주세요."; // textContent
+// innerHTML : 태그 변경도 가능하다.
+
+containerMessage.innerHTML = "<h3>D-Day를 입력해 주세요.</h3>";
+containerMessage.style.display = "flex"; // flex
+container.style.display = "none";
+
 // 1. dateFormMaker 함수 만들기 : input에 담기는 값 가져오는 함수 만들기.
 
 const dateFormMaker = function () {
@@ -34,6 +44,7 @@ const dateFormMaker = function () {
 
 const countMaker = function () {
   // return data
+
   const targetDateInput = dateFormMaker();
   const newDate = new Date(); // 현 시점
   const targetDate = new Date(targetDateInput).setHours(0, 0, 0, 0); // 원하는 날짜 (자정으로 설정하기.)
@@ -55,7 +66,6 @@ const countMaker = function () {
   // 수도 코드
   // 만약 remaining이 0 또는 음수라면, 타이머가 종료되었습니다. 출력하기.
 
-  const container = document.getElementById("d__day__container");
   const childContainer = document.querySelectorAll(".d__day__child__container");
   const remainingArray = [
     remainingDate,
@@ -66,11 +76,53 @@ const countMaker = function () {
 
   // remaining === 0 || remaining < 0 : 논리 연산자 이용하기.
   if (remaining <= 0) {
-    container.innerText = "타이머가 종료되었습니다.";
+    containerMessage.innerHTML = "<h3>타이머가 종료되었습니다.</h3>";
   } else if (isNaN(remaining)) {
     // 만약에 잘못된 날짜가 들어왔다면, 유효한 시간대가 아닙니다. 출력하기.
-    container.innerText = "유효한 시간대가 아닙니다.";
+    containerMessage.innerHTML = "<h3>유효한 시간대가 아닙니다.</h3>";
   } else {
+    containerMessage.style.display = "none";
+    container.style.display = "flex"; // flex
+
+    const days = document.getElementById("days");
+    const hours = document.getElementById("hours");
+    const min = document.getElementById("min");
+    const sec = document.getElementById("sec");
+
+    // 객체를 이용하여 화면에 남은 시간을 뿌려줄 수 있다.
+    // bracket notation : 무조건 따옴표로 접근해야 한다.
+
+    const documentObj = {
+      days: document.getElementById("days"),
+      hours: document.getElementById("hours"),
+      min: document.getElementById("min"),
+      sec: document.getElementById("sec"),
+    };
+
+    const remainingObj = {
+      remainingDate: Math.floor(remaining / 3600 / 24),
+      remainingHours: Math.floor(remaining / 3600) % 24,
+      remainingMins: Math.floor(remaining / 60) % 60,
+      remainingSecs: Math.floor(remaining) % 60,
+    };
+
+    // documentObj.days.textContent = remainingObj.remainingDate;
+    // documentObj.hours.textContent = remainingObj.remainingHours;
+    // documentObj.min.textContent = remainingObj.remainingMins;
+    // documentObj.sec.textContent = remainingObj.remainingSecs;
+
+    // key를 이용하여 value를 가져올 수 있다.
+
+    const timeKeys = Object.keys(remainingObj);
+    const docKeys = Object.keys(documentObj);
+
+    for (let i = 0; i < timeKeys.length; i++) {
+      // 주의 : timeKeys, docKeys가 문자열 배열이기 때문에, bracket notation 이용하기.
+      // documentObj[docKeys[i]] : 태그를 의미한다.
+
+      documentObj[docKeys[i]].textContent = remainingObj[timeKeys[i]];
+    }
+
     // document.getElementById("days").innerText = remainingDate;
     // document.getElementById("hours").innerText = remainingHours;
     // document.getElementById("min").innerText = remainingMins;
@@ -80,10 +132,11 @@ const countMaker = function () {
     // id 이용하여 나타내도 되고, idx+=1 처리하여 나타내도 된다.
 
     // forEach 완료하기.
-    let idx = 0;
-    childContainer.forEach((element) => {
-      element.firstElementChild.innerText = remainingArray[idx];
-      idx += 1;
-    });
+
+    // let idx = 0;
+    // childContainer.forEach((element) => {
+    //   element.firstElementChild.innerText = remainingArray[idx];
+    //   idx += 1;
+    // });
   }
 };
