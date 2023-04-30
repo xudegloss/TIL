@@ -56,6 +56,13 @@ const countMaker = function () {
   // 만약 remaining이 0 또는 음수라면, 타이머가 종료되었습니다. 출력하기.
 
   const container = document.getElementById("d__day__container");
+  const childContainer = document.querySelectorAll(".d__day__child__container");
+  const remainingArray = [
+    remainingDate,
+    remainingHours,
+    remainingMins,
+    remainingSecs,
+  ];
 
   // remaining === 0 || remaining < 0 : 논리 연산자 이용하기.
   if (remaining <= 0) {
@@ -64,10 +71,19 @@ const countMaker = function () {
     // 만약에 잘못된 날짜가 들어왔다면, 유효한 시간대가 아닙니다. 출력하기.
     container.innerText = "유효한 시간대가 아닙니다.";
   } else {
-    // 나중에 forEach 이용하여 한 번 구해보기.
-    document.getElementById("days").innerText = remainingDate;
-    document.getElementById("hours").innerText = remainingHours;
-    document.getElementById("min").innerText = remainingMins;
-    document.getElementById("sec").innerText = remainingSecs;
+    // document.getElementById("days").innerText = remainingDate;
+    // document.getElementById("hours").innerText = remainingHours;
+    // document.getElementById("min").innerText = remainingMins;
+    // document.getElementById("sec").innerText = remainingSecs;
+
+    // firstChild는 안되는데, firstElementChild는 되네...?
+    // id 이용하여 나타내도 되고, idx+=1 처리하여 나타내도 된다.
+
+    // forEach 완료하기.
+    let idx = 0;
+    childContainer.forEach((element) => {
+      element.firstElementChild.innerText = remainingArray[idx];
+      idx += 1;
+    });
   }
 };
