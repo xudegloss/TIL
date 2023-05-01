@@ -11,14 +11,13 @@
 // 함수명()
 // output();
 
-const containerMessage = document.querySelector("#d__day__message");
+const containerMessage = document.getElementById("d__day__message");
 const container = document.getElementById("d__day__container");
+const intervalIdArr = [];
 
-// containerMessage.textContent = "D-Day를 입력해 주세요."; // textContent
-// innerHTML : 태그 변경도 가능하다.
+// containerMessage.textContent = "D-Day를 입력해 주세요."; // textContent innerHTML : 태그 변경도 가능하다.
 
 containerMessage.innerHTML = "<h3>D-Day를 입력해 주세요.</h3>";
-containerMessage.style.display = "flex"; // flex
 container.style.display = "none";
 
 // 1. dateFormMaker 함수 만들기 : input에 담기는 값 가져오는 함수 만들기.
@@ -66,23 +65,37 @@ const countMaker = function () {
   // 수도 코드
   // 만약 remaining이 0 또는 음수라면, 타이머가 종료되었습니다. 출력하기.
 
-  const childContainer = document.querySelectorAll(".d__day__child__container");
-  const remainingArray = [
-    remainingDate,
-    remainingHours,
-    remainingMins,
-    remainingSecs,
-  ];
+  // const childContainer = document.querySelectorAll(".d__day__child__container");
+  // const remainingArray = [
+  //   remainingDate,
+  //   remainingHours,
+  //   remainingMins,
+  //   remainingSecs,
+  // ];
 
   // remaining === 0 || remaining < 0 : 논리 연산자 이용하기.
   if (remaining <= 0) {
+    // 없애고 싶은 메세지는 없애고, 남겨야 되는 메세지는 남기는 코드
+
+    container.style.display = "none";
     containerMessage.innerHTML = "<h3>타이머가 종료되었습니다.</h3>";
+    console.log(containerMessage.innerHTML);
+    containerMessage.style.display = "flex";
+
+    setClearInterval();
+    return; // 함수를 끝내는 용도로 이용할 수 있다. (불필요한 연산 제거할 수 있다.)
   } else if (isNaN(remaining)) {
     // 만약에 잘못된 날짜가 들어왔다면, 유효한 시간대가 아닙니다. 출력하기.
+
+    container.style.display = "none";
     containerMessage.innerHTML = "<h3>유효한 시간대가 아닙니다.</h3>";
+    containerMessage.style.display = "flex";
+
+    setClearInterval();
+    return;
   } else {
     containerMessage.style.display = "none";
-    container.style.display = "flex"; // flex
+    container.style.display = "flex";
 
     const days = document.getElementById("days");
     const hours = document.getElementById("hours");
@@ -92,12 +105,30 @@ const countMaker = function () {
     // 객체를 이용하여 화면에 남은 시간을 뿌려줄 수 있다.
     // bracket notation : 무조건 따옴표로 접근해야 한다.
 
-    const documentObj = {
-      days: document.getElementById("days"),
-      hours: document.getElementById("hours"),
-      min: document.getElementById("min"),
-      sec: document.getElementById("sec"),
-    };
+    const documentArray = ["days", "hours", "min", "sec"];
+    const documentObj = {};
+
+    // for of를 이용하여 반복문 생성하여 documentObj 객체 생성하기.
+    // bracket notation 이용하기. (typeof를 이용하면 string이 나옴.)
+
+    for (let item of documentArray) {
+      documentObj[item] = document.getElementById(item);
+    }
+
+    // 아래의 식을 이용하여 남은 시간은 화면에 업데이트 할 수 있다.
+
+    // let i = 0;
+    // for (let tag of documentArray) {
+    //   document.getElementById(tag).textContent = remaining[timeKeys[i]];
+    //   i += 1;
+    // }
+
+    // const documentObj = {
+    //   days: document.getElementById("days"),
+    //   hours: document.getElementById("hours"),
+    //   min: document.getElementById("min"),
+    //   sec: document.getElementById("sec"),
+    // };
 
     const remainingObj = {
       remainingDate: Math.floor(remaining / 3600 / 24),
@@ -116,11 +147,21 @@ const countMaker = function () {
     const timeKeys = Object.keys(remainingObj);
     const docKeys = Object.keys(documentObj);
 
-    for (let i = 0; i < timeKeys.length; i++) {
-      // 주의 : timeKeys, docKeys가 문자열 배열이기 때문에, bracket notation 이용하기.
-      // documentObj[docKeys[i]] : 태그를 의미한다.
+    // for (let i = 0; i < timeKeys.length; i++) {
+    //   // 주의 : timeKeys, docKeys가 문자열 배열이기 때문에, bracket notation 이용하기.
+    //   // documentObj[docKeys[i]] : 태그를 의미한다.
 
-      documentObj[docKeys[i]].textContent = remainingObj[timeKeys[i]];
+    //   documentObj[docKeys[i]].textContent = remainingObj[timeKeys[i]];
+    // }
+
+    // 객체에 특화된 반복문
+    // key => string, 따라서 bracket notation 이용해야 한다.
+
+    let idx = 0;
+    for (let key in documentObj) {
+      // timeKeys 이용하기. (객체에서는 키 중요하다.)
+      documentObj[key].textContent = remainingObj[timeKeys[idx]];
+      idx += 1; // idx++
     }
 
     // document.getElementById("days").innerText = remainingDate;
@@ -138,5 +179,43 @@ const countMaker = function () {
     //   element.firstElementChild.innerText = remainingArray[idx];
     //   idx += 1;
     // });
+  }
+};
+
+// 3. 화면에 출력하는 함수 만들기
+
+const starter = function () {
+  // setTimeout : 함수 실행 속도 늦춰주는 함수.
+  // 문제점 : i가 100이 넘어가면 더 이상 시계가 돌아가지 않는다.
+
+  // for (let i = 0; i < 100; i++) {
+  //   // 익명 함수 사용해도 되고, 아니면 그냥 아래처럼 함수 이름만 적어줘도 된다.
+  //   setTimeout(countMaker, 1000 * i);
+  // }
+
+  // setInterval : 정해진 시간마다 함수를 실행시켜주는 함수.
+
+  countMaker(); // 1초 뒤에 실행되니까 앞에 한번 countMaker 실행시켜주기.
+  const intervalId = setInterval(countMaker, 1000);
+
+  intervalIdArr.push(intervalId);
+};
+
+// 4. 함수를 종료하는 함수 만들기.
+
+const setClearInterval = () => {
+  // for (let i = 0; i < intervalIdArr.length; i++) {
+  //   clearInterval(intervalIdArr[i]);
+  // }
+
+  // 위에서 배운 for of를 이용하여 배열의 값을 clearInterval 할 수 있다.
+
+  containerMessage.style.display = "flex";
+  container.style.display = "none";
+
+  containerMessage.innerHTML = "<h3>D-Day를 입력해 주세요.</h3>";
+
+  for (let i of intervalIdArr) {
+    clearInterval(i);
   }
 };

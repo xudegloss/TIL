@@ -39,7 +39,8 @@ h1 {
   margin-bottom: 30px;
 }
 
-#start__btn {
+#start__btn,
+#clear__btn {
   padding: 5px 10px;
   font-size: 1.3rem;
 }
