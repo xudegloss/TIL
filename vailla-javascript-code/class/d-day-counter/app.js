@@ -14,6 +14,7 @@
 const containerMessage = document.getElementById("d__day__message");
 const container = document.getElementById("d__day__container");
 const intervalIdArr = [];
+const savedDate = localStorage.getItem("saved-date");
 
 // containerMessage.textContent = "D-Day를 입력해 주세요."; // textContent innerHTML : 태그 변경도 가능하다.
 
@@ -41,10 +42,14 @@ const dateFormMaker = function () {
 
 // 2.  countMaker 함수 만들기 : 현 시점에서 원하는 날짜까지 얼마나 남았는지 체크하는 함수 만들기.
 
-const countMaker = function () {
+const countMaker = function (targetDateInput) {
+  // 7. local storage에 접근하기.
+
+  localStorage.setItem("saved-date", targetDateInput); // key-value 형태
+
   // return data
 
-  const targetDateInput = dateFormMaker();
+  // const targetDateInput = dateFormMaker();
   const newDate = new Date(); // 현 시점
   const targetDate = new Date(targetDateInput).setHours(0, 0, 0, 0); // 원하는 날짜 (자정으로 설정하기.)
   const remaining = (targetDate - newDate) / 1000; // 원하는 날짜에서 현 시점까지 남은 s(초)
@@ -79,7 +84,6 @@ const countMaker = function () {
 
     container.style.display = "none";
     containerMessage.innerHTML = "<h3>타이머가 종료되었습니다.</h3>";
-    console.log(containerMessage.innerHTML);
     containerMessage.style.display = "flex";
 
     setClearInterval();
@@ -157,10 +161,29 @@ const countMaker = function () {
     // 객체에 특화된 반복문
     // key => string, 따라서 bracket notation 이용해야 한다.
 
+    // 6. 숫자를 두자리로 맞춰주는 함수 만들기.
+
+    const format = (time) => {
+      if (time < 10) {
+        return "0" + time;
+      }
+      return time;
+    };
+
     let idx = 0;
     for (let key in documentObj) {
+      const remainingTime = remainingObj[timeKeys[idx]];
+      documentObj[key].textContent = format(remainingTime);
+
       // timeKeys 이용하기. (객체에서는 키 중요하다.)
-      documentObj[key].textContent = remainingObj[timeKeys[idx]];
+      // documentObj[key].textContent = remainingObj[timeKeys[idx]];
+
+      // 나는 padStart 이용하였다.
+
+      // documentObj[key].textContent = String(
+      //   remainingObj[timeKeys[idx]]
+      // ).padStart(2, "0");
+
       idx += 1; // idx++
     }
 
@@ -184,7 +207,7 @@ const countMaker = function () {
 
 // 3. 화면에 출력하는 함수 만들기
 
-const starter = function () {
+const starter = function (targetDateInput) {
   // setTimeout : 함수 실행 속도 늦춰주는 함수.
   // 문제점 : i가 100이 넘어가면 더 이상 시계가 돌아가지 않는다.
 
@@ -195,8 +218,21 @@ const starter = function () {
 
   // setInterval : 정해진 시간마다 함수를 실행시켜주는 함수.
 
-  countMaker(); // 1초 뒤에 실행되니까 앞에 한번 countMaker 실행시켜주기.
-  const intervalId = setInterval(countMaker, 1000);
+  // const targetDateInput = dateFormMaker();
+
+  // 이 부분 이해가 잘 안 간다.
+
+  if (!targetDateInput) {
+    // 데이터가 들어가지 않은 경우
+    targetDateInput = dateFormMaker();
+  }
+
+  setClearInterval(); // 앞 시간 제거하고 새로운 시간만 타이머 측정하기.
+
+  countMaker(targetDateInput); // 1초 뒤에 실행되니까 앞에 한번 countMaker 실행시켜주기.
+  const intervalId = setInterval(() => {
+    countMaker(targetDateInput);
+  }, 1000);
 
   intervalIdArr.push(intervalId);
 };
@@ -210,12 +246,27 @@ const setClearInterval = () => {
 
   // 위에서 배운 for of를 이용하여 배열의 값을 clearInterval 할 수 있다.
 
-  containerMessage.style.display = "flex";
-  container.style.display = "none";
-
-  containerMessage.innerHTML = "<h3>D-Day를 입력해 주세요.</h3>";
-
   for (let i of intervalIdArr) {
     clearInterval(i);
   }
 };
+
+// 5. 에러 메세지가 제대로 뜨지 않아서 초기화 함수 만들기.
+
+const resetTimer = () => {
+  containerMessage.style.display = "flex";
+  container.style.display = "none";
+
+  containerMessage.innerHTML = "<h3>D-day를 입력해 주세요.</h3>";
+  setClearInterval();
+};
+
+// truthy : 예외 처리에 유리하다.
+
+if (savedDate) {
+  // 저장된 데이터가 있는 경우
+  starter(savedDate);
+} else {
+  container.style.display = "none";
+  containerMessage.innerHTML = "<h3>D-day를 입력해 주세요.</h3>";
+}
